@@ -1,0 +1,2 @@
+class QualityReportsController < ApplicationController
+end
