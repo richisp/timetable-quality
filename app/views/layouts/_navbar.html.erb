@@ -12,12 +12,21 @@
 <% end %>
 
 <div class='navigation'>
+  <div class='check-quality'>
+    <%= link_to 'Check Timetable Quality', root_url %>
+  </div>
+
   <% if Current.user %>
-    <p>Logged in as: <strong><%= Current.user.email %></strong></p><br>
-    <%= link_to 'Edit Password', edit_password_path %>
-    <%= button_to 'Logout', logout_path, method: :delete %>
+    <p>Logged in as: <strong><%= Current.user.email %></strong></p>
+    <div class='navigation-break'>
+      <%= link_to 'Quality Reports', quality_reports_url %>
+      <%= link_to 'Edit Password', edit_password_path %>
+      <%= button_to 'Logout', logout_path, method: :delete %>
+    </div>
   <% else %>
-    <%= link_to 'Sign Up', sign_up_path %>
-    <%= link_to 'Login', sign_in_path %>
+    <div class='navigation-break'>
+      <%= link_to 'Sign Up', sign_up_path %>
+      <%= link_to 'Login', sign_in_path %>
+    </div>
   <% end %>
 </div>

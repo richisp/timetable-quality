@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'quality_reports#index'
+  root 'quality_reports#new'
+
+  resources 'quality_reports'
 
   get 'sign_up', to: 'registrations#new'
   post 'sign_up', to: 'registrations#create'

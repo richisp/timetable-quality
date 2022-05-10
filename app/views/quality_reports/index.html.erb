@@ -1,4 +1,50 @@
-<h2>Hello World</h2>
-<p>
-  The time is now: <%= Time.now %>
-</p>
+<h1>Quality Reports</h1>
+
+<table id="reports">
+  <thead>
+    <tr>
+      <th>score</th>
+      <th>lectures</th>
+      <th>created_at</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quality_reports.each do |quality_report| %>
+      <tr>
+        <td><%= (quality_report.score.to_f * 100).round(2) %>%</td>
+        <td>
+          <table id='reports'>
+            <thead>
+              <tr>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th>Sunday</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% quality_report.lectures.transpose.each do |day| %>
+                <tr>
+                  <% day.each do |lecture| %>
+                    <td><%= lecture %></td>
+                  <% end %>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </td>
+        <td><%= quality_report.created_at %></td>
+        <td><%= link_to 'Show', quality_report %></td>
+        <td><%= link_to 'Destroy', quality_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

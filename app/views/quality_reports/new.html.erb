@@ -1,0 +1,28 @@
+<h1>Check Timetable Quality</h1>
+
+<%= form_with model: @quality_report do |form| %>
+  <% if @quality_report.errors.any? %>
+    <h1>Errors are present</h1>
+    <ul>
+        <% @quality_report.errors.full_messages.each do |message| %>
+        <li><%= message %> </li>
+        <% end %>
+    </ul>
+  <% end %>
+
+  <div class='schedule-upload'>
+    <h2>Select weights for criteria</h2>
+    <% QualityConstraint.all.each do |constraint| %>
+      <%= form.label constraint.title.to_sym %>
+      <%= form.number_field constraint.title.to_sym, value: constraint.default_weight, step: 0.1 %>
+    <% end %>
+  </div>
+
+  <div class='schedule-upload'>
+    <h2>Upload a schedule</h2>
+
+    <%= form.file_field :lectures %>
+  </div>
+
+  <%= form.submit%>
+<% end %>

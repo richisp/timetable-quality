@@ -14,7 +14,27 @@
  *= require_self
  */
 
- a:link {
+body {
+  background-color: rgba(30,39,50,0.04);
+}
+
+h1 {
+  font-size: 24px;
+  margin: 20px;
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  border-color: rgb(215, 223, 227);
+  border-radius: 3px;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: rgba(14, 30, 38, 0.15) 0px 3px 6px 0px;
+  box-sizing: border-box;
+  display: block
+}
+
+a:link {
   text-decoration: none;
 }
 
@@ -32,11 +52,11 @@ a:active {
 
 .navigation {
   display: flex;
-  background-color: pink;
+  background-color: #EEA47FFF;
 }
 
 .navigation a, .navigation button {
-  background-color: purple;
+  background-color: #00539CFF;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -48,7 +68,7 @@ a:active {
   cursor: pointer;
 }
 
-.navigation a:first-child {
+.navigation-break {
   margin-left: auto;
 }
 
@@ -91,49 +111,38 @@ a:active {
   color: black;
 }
 
-.main-title{
-  text-align: center;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  background-image: url("https://img1.10bestmedia.com/Images/Photos/380637/GettyImages-910131818_54_990x660.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: left center;
-  color: white;
-  -webkit-text-stroke: 1px black;
-  font-size: 50px;
-  margin-top: 0px;
-}
-
 body{
   margin: 0;
 }
+
 table{
-width: 90%;
+  width: 90%;
 }
 
-#flowers {
-  font-family: Arial, Helvetica, sans-serif;
+#reports {
   border-collapse: collapse;
   width: 90%;
   margin: 30px;
+  background-color: white;
+  border-color: rgb(215, 223, 227);
+  border-radius: 3px;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: rgba(14, 30, 38, 0.15) 0px 3px 6px 0px;
+  box-sizing: border-box;
 }
 
-#flowers td, #flowers th {
+#reports td, #reports th {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-#flowers tr:nth-child(even){background-color: #f2f2f2;}
-
-#flowers tr:hover {background-color: #ddd;}
-
-#flowers th {
+#reports th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: purple;
-  color: white;
+  background-color: #eee;
 }
 
 .btn-divider{
@@ -142,8 +151,8 @@ width: 90%;
   text-align: center;
   margin-top: 50px;
 }
-.new-flower{
-  background-color: purple;
+.new-report{
+  background-color: #00539CFF;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -163,7 +172,7 @@ textarea{
   width: 50%;
 }
 input[type=button], input[type=submit], input[type=reset] {
-  background-color: purple;
+  background-color: #00539CFF;
   border: none;
   color: white;
   padding: 16px 32px;
@@ -175,7 +184,7 @@ textarea:focus, input[type=text]:focus  {
   background-color: lightblue;
 }
 .back-btn{
-  background-color: purple;
+  background-color: #00539CFF;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -199,4 +208,24 @@ form {
 form label {
   margin: 10px;
   margin-bottom: 0px;
+}
+
+.check-quality a {
+  background-color: #7A2048;
+  border-radius: 24px;
+}
+
+.schedule-upload {
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  background-color: white;
+  border-color: rgb(215, 223, 227);
+  border-radius: 3px;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: rgba(14, 30, 38, 0.15) 0px 3px 6px 0px;
+  box-sizing: border-box;
+  display: block;
 }

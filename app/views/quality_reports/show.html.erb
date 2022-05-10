@@ -1,0 +1,48 @@
+<p>
+  <strong>Score:</strong>
+  <%= (@quality_report.score.to_f * 100).round(2) %>%
+</p>
+
+<p>
+  <strong>Constraint scores:</strong>
+  <% @quality_report.constraint_scores.each do |constraint, value| %>
+    <ul><%= constraint %>: <%= (value.to_f * 100).round(2) %>%</ul>
+  <% end %>
+</p>
+
+<p>
+  <strong>Parameters:</strong>
+  <% @quality_report.parameters.each do |parameter, value| %>
+    <ul><%= parameter %>: <%= value %></ul>
+  <% end %>
+</p>
+
+<p>
+  <strong>Lectures:</strong>
+
+  <table id='reports'>
+    <thead>
+      <tr>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+        <th>Saturday</th>
+        <th>Sunday</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @quality_report.lectures.transpose.each do |day| %>
+        <tr>
+          <% day.each do |lecture| %>
+            <td><%= lecture %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</p>
+
+<%= link_to 'Back', quality_reports_path, :class => 'back-btn' %>
