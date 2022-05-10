@@ -20,7 +20,7 @@ class QualityReportsController < ApplicationController
     quality_result = CalculateQuality.new(lectures, parameters).execute
 
     new_params = {
-      user_id: Current.user.id,
+      user_id: Current.user&.id,
       score: quality_result[:score],
       constraint_scores: quality_result[:constraint_scores],
       parameters: parameters,
