@@ -40,7 +40,7 @@
             </tbody>
           </table>
         </td>
-        <td><%= quality_report.created_at %></td>
+        <td><%= quality_report.created_at.strftime('%F') %></td>
         <td><%= link_to 'Show', quality_report %></td>
         <td><%= link_to 'Destroy', quality_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
