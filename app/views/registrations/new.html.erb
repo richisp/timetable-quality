@@ -1,6 +1,15 @@
 <h1>Sign Up</h1>
 
 <%= form_with model: @user, url: sign_up_path do |f| %>
+  <% if @user.errors.any? %>
+    <h1>Errors are present</h1>
+    <ul>
+        <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %> </li>
+        <% end %>
+    </ul>
+  <% end %>
+
   <p>
   <%= f.label 'email' %><br>
   <%= f.text_field :email %>

@@ -15,7 +15,7 @@ class QualityReportsController < ApplicationController
   end
 
   def create
-    lectures = CSV.table(quality_report_params[:lectures], headers: false, col_sep: ',').transpose
+    lectures = CSV.table(quality_report_params[:lectures], headers: false, col_sep: ';').transpose
     parameters = quality_report_params.except(:lectures).to_h
     quality_result = CalculateQuality.new(lectures, parameters).execute
 

@@ -1,6 +1,15 @@
 <h1>Edit Password</h1>
 
   <%= form_with model: Current.user, url: edit_password_path do |f| %>
+    <% if Current.user.errors.any? %>
+      <h1>Errors are present</h1>
+      <ul>
+          <% Current.user.errors.full_messages.each do |message| %>
+          <li><%= message %> </li>
+          <% end %>
+      </ul>
+    <% end %>
+
     <p>
     <%= f.label 'password:'%><br>
     <%= f.password_field :password %>
@@ -13,4 +22,3 @@
     <%= f.submit 'Update' %>
     </p>
   <% end %>
-  

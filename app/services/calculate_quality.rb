@@ -38,7 +38,7 @@ class CalculateQuality
 
   def gaps_between_lectures
     gaps_count = @lectures.sum do |day|
-      day.map { |a| a.present? ? a.gsub(' ', '_') : ' ' }.join.strip.squish.count(' ')
+      day.map { |a| a.present? ? 'a' : ' ' }.join.strip.squish.count(' ')
     end
 
     1 - normalize(gaps_count, @lectures.sum { |day| day.compact.size } - 1, 0)
@@ -53,7 +53,7 @@ class CalculateQuality
 
   def lecture_shifts
     lecture_span = @lectures.sum do |day|
-      day.map { |a| a.present? ? a.gsub(' ', '_') : ' ' }.join.strip.length
+      day.map { |a| a.present? ? 'a' : ' ' }.join.strip.length
     end
 
     1 - normalize(lecture_span, 50, @lectures.sum { |day| day.compact.size })
